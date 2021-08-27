@@ -60,4 +60,4 @@ const NodeDetail = () => {
   );
 };
 
-export default NodeDetail;
+export default withApollo(NodeDetail);
