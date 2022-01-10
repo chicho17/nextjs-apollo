@@ -4,21 +4,19 @@ import styles from '../../styles/Home.module.css';
 import { useQuery } from '@apollo/client';
 import { gql } from '@apollo/client';
 import Link from 'next/link';
+import { DASHBOARD_FIELDS } from '../../fragments/dashboard';
 
 const DASHBOARD_LIST_QUERY = gql`
   query dashboards {
     dashboards {
       total
       list {
-        id
-        name
-        widgets {
-          id
-          name
-        }
+        ...DashboardFields
       }
     }
   }
+
+  ${DASHBOARD_FIELDS}
 `;
 
 const DashboardList = () => {

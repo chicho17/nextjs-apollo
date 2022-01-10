@@ -7,18 +7,15 @@ import { gql } from '@apollo/client';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { DASHBOARD_FIELDS } from '../../fragments/dashboard';
 
 const DASHBOARD_BY_ID_QUERY = gql`
   query dashboardByID($id: String!) {
     dashboardByID(id: $id) {
-      id
-      name
-      widgets {
-        id
-        name
-      }
+      ...DashboardFields
     }
   }
+  ${DASHBOARD_FIELDS}
 `;
 
 const LAST_ACCESSED_UNIT_MUTATION = gql`

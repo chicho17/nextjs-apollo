@@ -10,7 +10,7 @@ const Accounts = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Accounts</title>
+        <title>Users</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

@@ -10,12 +10,10 @@ const ENTITIES_QUERY = gql`
           id
           name
         }
-        ...UserFields
+        # ...UserFields
       }
     }
   }
-
-  ${USER_FRAGMENT}
 `;
 
 const useEntitiesQuery = ({ type }) => {
